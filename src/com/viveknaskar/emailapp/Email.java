@@ -25,11 +25,7 @@ public class Email {
 
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Email has been created successfully for "+ firstName + " " + lastName + "!");
-
         this.department = setDepartment();
-        System.out.println("Department is " + this.department);
-
         this.password = randomPassword(10);
         System.out.println("Generated password: " + this.password);
 
@@ -37,7 +33,6 @@ public class Email {
          * Email syntax is firstName.lastName@department.company.com
          */
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase() + "." + companySuffix;
-        System.out.println("Your email is: " + email);
     }
 
     /**
@@ -46,7 +41,7 @@ public class Email {
      */
     private String setDepartment() {
 
-        System.out.print("Department Code:\n1 for Development\n2 for R&D\n3 for HR\n4 for None of these\nEnter department code:");
+        System.out.print("Hello " + firstName +", select your Department Code.\n1 for Development\n2 for R&D\n3 for HR\n4 for None of these\nEnter department code:");
 
         /**
          * Scanner class takes in the department choice from the user
@@ -106,6 +101,14 @@ public class Email {
     public String getAlternateEmail () { return  alternateEmail; }
 
     public String getPassword() { return  password; }
+
+    /**
+     * A method to display name, company email and mailbox capacity
+     * @return
+     */
+    public String showInfo() {
+        return "Name: " + firstName + " " + lastName + "\n" + "Company email: " + email + "\n" + "Mailbox capacity: " + mailboxCapacity + "MB";
+    }
 
 
 
