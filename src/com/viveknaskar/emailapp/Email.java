@@ -12,4 +12,16 @@ public class Email {
     private int mailboxCapacity;
     private String alternateEmail;
 
+    /**
+     * A constructor class that receives the firstName and lastName
+     * @param firstName
+     * @param lastName
+     */
+    public Email(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+        System.out.println("Email has been created successfully for "+ firstName + " " + lastName + "!");
+    }
+
 }
