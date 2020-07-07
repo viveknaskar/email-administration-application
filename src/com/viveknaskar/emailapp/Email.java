@@ -12,7 +12,9 @@ public class Email {
     private String password;
     private String department;
     private int mailboxCapacity;
+    private String email;
     private String alternateEmail;
+    private String companySuffix = "company.com";
 
     /**
      * A constructor class that receives the firstName and lastName
@@ -30,6 +32,12 @@ public class Email {
 
         this.password = randomPassword(10);
         System.out.println("Generated password: " + this.password);
+
+        /**
+         * Email syntax is firstName.lastName@department.company.com
+         */
+        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase() + "." + companySuffix;
+        System.out.println("Your email is: " + email);
     }
 
     /**
@@ -46,7 +54,7 @@ public class Email {
         Scanner in = new Scanner(System.in);
         int departmentChoice = in.nextInt();
         if (departmentChoice == 1) { return "development"; }
-        else if (departmentChoice == 2) { return "R&D"; }
+        else if (departmentChoice == 2) { return "RD"; }
         else if (departmentChoice == 3) { return "HR"; }
         else { return "None of these"; }
 
