@@ -11,7 +11,7 @@ public class Email {
     private String lastName;
     private String password;
     private String department;
-    private int mailboxCapacity;
+    private int mailboxCapacity = 500;
     private String email;
     private String alternateEmail;
     private String companySuffix = "company.com";
@@ -74,7 +74,33 @@ public class Email {
             int randomValue = (int) (Math.random() * passwordSet.length());
             password[i] = passwordSet.charAt(randomValue);
         }
-        return new String(password); // password is a set of characters
+        return new String(password); // password is a set of characters in this context
     }
+
+    /**
+     * This method changes the mailbox capacity which has a defaulted value of 500
+     * @param capacity is the field to increase the mail box capacity with a new value
+     */
+    public void setMailboxCapacity(int capacity) {
+        this.mailboxCapacity = capacity;
+    }
+
+    /**
+     * This method sets alternate email
+     * @param alternateEmail
+     */
+    public void setAlternateEmail(String alternateEmail) {
+        this.alternateEmail = alternateEmail;
+    }
+
+    /**
+     * This method creates a new password
+     * @param password
+     */
+    public void changePassword(String password) {
+        this.password = password;
+    }
+
+
 
 }
