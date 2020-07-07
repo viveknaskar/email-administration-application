@@ -27,6 +27,9 @@ public class Email {
 
         this.department = setDepartment();
         System.out.println("Department is " + this.department);
+
+        this.password = randomPassword(10);
+        System.out.println("Generated password: " + this.password);
     }
 
     /**
@@ -47,6 +50,23 @@ public class Email {
         else if (departmentChoice == 3) { return "HR"; }
         else { return "None of these"; }
 
+    }
+
+    /**
+     * A method to generate random password
+     * @param length determines the length of the password
+     * @return password
+     */
+    private String randomPassword(int length) {
+
+        // passwordSet is the allowed characters for password generation
+        String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#_&";
+        char[] password = new char[length];
+        for (int i=0; i < length; i++) {
+            int randomValue = (int) (Math.random() * passwordSet.length());
+            password[i] = passwordSet.charAt(randomValue);
+        }
+        return new String(password); // password is a set of characters
     }
 
 }
