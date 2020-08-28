@@ -1,4 +1,4 @@
-# email-administration-application
+# Email Administration Application
 A sample java application which creates an email for an administration.
 
 The mail created is of the format: firstname.lastname@department.company.com. Example of the email: vivek.naskar@devops.google.com
